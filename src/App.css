@@ -36,3 +36,168 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+.menu-wapper{
+  width: 240px;
+  max-width: 240px;
+  padding: 20px;
+  background-color: #111;
+  flex-direction: column;
+  position: relative;
+  z-index: 99;
+}
+
+.menu-wapper .menu-title{
+  color: #44d62c;
+  font-family: 'Plus Jakarta Sans' ,'Roboto';
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: normal;
+  max-height: 24px;
+  margin-bottom: 20px;
+}
+
+.menu-wapper .menu-list{
+  color:#ccc;
+}
+
+.menu-wapper .menu-item{
+  max-height: 30px;
+  height: 30px;
+  border: none;
+  color: #ccc;
+  text-transform: capitalize;
+  padding: 5px 10px 5px 36px;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  will-change: color, background-color;
+  transition: color .2s, background-color .2s;
+}
+
+.menu-wapper .menu-item:hover{
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.menu-wapper .menu-item.active{
+  color: #44d62c;
+}
+
+.menu-wapper .menu-border{
+  border: 1px solid #5d5d5d;
+  max-height: 220px;
+  height: 220px;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+.menu-wapper .menu-border .edit-input{
+  z-index: 9999;
+  font-family: 'Roboto', sans-serif;
+  width: calc(100% - 30px);
+  border: 1px solid #44d62c;
+  box-sizing: border-box;
+  background-color: #111 !important;
+  line-height: 20px;
+  position: absolute;
+  color: white;
+}
+
+
+.menu-wapper .toolbar{
+  border: 1px solid #5d5d5d;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.menu-wapper .toolbar .deleteEq{
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  background-color: #111;
+  border: 1px solid #c8323c;
+  border-radius: 3px;
+  box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.2);
+  padding: 20px;
+  left: 10px;
+  top: 10px;
+  display: flex !important;
+  will-change: visibility, opacity;
+  transition: visibility 0s, opacity 0.3s linear;
+  visibility: hidden;
+  z-index: 20;
+}
+
+.backDrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.menu-wapper .toolbar .deleteEq .delete-title{
+  color:#c8323c;
+  font-weight: bold;
+}
+.menu-wapper .toolbar .deleteEq .deleteBtn{
+  border: 1px solid #c8323c;
+  background-color: #c8323c;
+  height: 27px;
+  width: auto;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 17px;
+  background-color: #c8323c;
+  padding: 4px 0;
+  min-width: 90px;
+  border: 1px solid rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.menu-wapper .function-btn{
+  cursor: pointer;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  font-size: 20px;
+}
+
+.menu-wapper .function-btn:hover{
+  background-color: rgba(255,255,255,0.1);
+}
+
+.eq-bg{
+  z-index: 98;
+  background-color: #222;
+  padding: 20px 80px 20px 80px;
+  position: relative;
+  left: 0px;
+  max-height: 640px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color:white;
+  text-align: center;
+}
+
+.eq-bg .eq-title{
+  color: #ccc;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0;
+    margin-bottom: 0px;
+  margin-bottom: 20px;
+}
