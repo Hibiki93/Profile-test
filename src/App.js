@@ -31,42 +31,42 @@ function App() {
     faMusic,
   };
   const [menuItem, setMenu] = useState([
-    {
-      "name": "Default",
-      "editAble": false,
-      "active": true,
-      "icon": "faSliders",
-    },
-    {
-      "name": "Game",
-      "editAble": false,
-      "active": false,
-      "icon": "faGamepad",
-    },
-    {
-      "name": "Movie",
-      "editAble": false,
-      "active": false,
-      "icon": "faPhotoFilm",
-    },
-    {
-      "name": "Music",
-      "editAble": false,
-      "active": false,
-      "icon": "faMusic",
-    },
-    {
-      "name": "Custom",
-      "editAble": true,
-      "active": false,
-      "icon": "faSliders",
-    },
-    {
-      "name": "demo long text demo long text demo",
-      "editAble": true,
-      "active": false,
-      "icon": "faSliders",
-    },
+    // {
+    //   "name": "Default",
+    //   "editAble": false,
+    //   "active": true,
+    //   "icon": "faSliders",
+    // },
+    // {
+    //   "name": "Game",
+    //   "editAble": false,
+    //   "active": false,
+    //   "icon": "faGamepad",
+    // },
+    // {
+    //   "name": "Movie",
+    //   "editAble": false,
+    //   "active": false,
+    //   "icon": "faPhotoFilm",
+    // },
+    // {
+    //   "name": "Music",
+    //   "editAble": false,
+    //   "active": false,
+    //   "icon": "faMusic",
+    // },
+    // {
+    //   "name": "Custom",
+    //   "editAble": true,
+    //   "active": false,
+    //   "icon": "faSliders",
+    // },
+    // {
+    //   "name": "demo long text demo long text demo",
+    //   "editAble": true,
+    //   "active": false,
+    //   "icon": "faSliders",
+    // },
   ]);
 
   const [deleteModal, setDeleteModal] = useState(false);
@@ -217,8 +217,6 @@ function App() {
   const handleChange = (newProfileList) => {
     setProfileList(newProfileList);
     setUnsavedChanges(true);
-
-    // Reset the timeout
     clearTimeout(saveTimeout);
     saveTimeout = setTimeout(() => {
       setUnsavedChanges(false);
@@ -272,24 +270,29 @@ function App() {
             onClick={handleBackDrop}
           ></div>
           <div className="menu-border">
-            {menuItem.map((item, index) => (
-              <div
-                className={`menu-item ${item.active ? "active" : ""}`}
-                key={index}
-                onClick={() => handleMenuItemClick(index)}
-              >
-                <FontAwesomeIcon icon={icons[item.icon]} className="me-2" />
-                {editInput && item.active ? (
-                  <input
-                    className="edit-input"
-                    value={item.name}
-                    onChange={(e) => handleInputChange(e, index)}
-                  />
-                ) : (
-                  item.name
-                )}
-              </div>
-            ))}
+          {menuItem.length > 0 ? (
+              menuItem.map((item, index) => (
+                <div
+                  className={`menu-item ${item.active ? "active" : ""}`}
+                  key={index}
+                  onClick={() => handleMenuItemClick(index)}
+                >
+                  <FontAwesomeIcon icon={icons[item.icon]} className="me-2" />
+                  {editInput && item.active ? (
+                    <input
+                      className="edit-input"
+                      value={item.name}
+                      onChange={(e) => handleInputChange(e, index)}
+                    />
+                  ) : (
+                    item.name
+                  )}
+                </div>
+              ))
+            ) : (
+              <span className="loader"></span>
+            )}
+
             {/* <input id="profileRename" className="profile-item" placeholder="Enter Profile Name" maxlength="25"/> */}
 
             {/* <div id="profileDelCfm" className="profile-del alert flex">
