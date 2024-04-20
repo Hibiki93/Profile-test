@@ -15,6 +15,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState,useEffect } from "react";
 
 function App() {
+  const [pageTitle, setPageTitle] = useState("Profile");
+  useEffect(() => {
+    document.title = pageTitle;
+  }, [pageTitle]);
   const icons = {
     faAdd,
     faTrash,
@@ -346,7 +350,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="col-10 eq-bg">
+      <div className="container col-10 eq-bg">
         <div className="sub-title flex">
           <h1 id="eqTitle" className="eq-title">
             {getActiveItemName()}
@@ -356,11 +360,15 @@ function App() {
               <p>
                 Hi, I am Eric Pang.
                 <br/>
+                This interface I am using ReactJs and bootstrap to build.
+                <br/>
+                <a href="https://profile-test-kmqf.onrender.com/" target="_blank">View this online</a>
+                <br/>
                 <a href="https://hibiki93.github.io/resume/" target="_blank">View my online resume</a>
                 <br/>
-                <a href="#" target="_blank">View my code on github</a>
+                <a href="https://github.com/Hibiki93/Profile-test" target="_blank">View my code on github</a>
                 <br/>
-                <a href="#" target="_blank">View my API documentation</a>
+                <a href="https://documenter.getpostman.com/view/4564701/2sA35D6PJz" target="_blank">View my API documentation</a>
               </p>
             </div>
           )}
